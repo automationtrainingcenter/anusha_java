@@ -89,6 +89,75 @@ public class ArraysDemo {
         System.out.println(vowels[4]);
 
 
+        // 2D array declaration
+        int[][] m1 = new int[2][2];
+
+        // store the values in m1 array
+        /*
+            0: 1:
+        0: 00 01
+        1: 10 11
+         */
+        m1[0][0] = 1;
+        m1[0][1] = 0;
+        m1[1][0] = 0;
+        m1[1][1] = 1;
+
+
+        // retrieve the data from m1 array
+        System.out.print(m1[0][0]+ " "); // first row first column
+        System.out.println(m1[0][1]); // first row second column
+        System.out.print(m1[1][0] + " "); // second row first column
+        System.out.println(m1[1][1]); // second row second column
+
+
+        // 2D array initialization
+        int[][] m2 = {{1,2,3}, {4,5,6}, {7,8,9}};
+
+        // number of items in a m2 array
+        System.out.println("number of items in m2 = "+m2.length);
+        System.out.println("number of items in 1st 1D array of m2 i.e m2[0]= "+m2[0].length);
+        System.out.println("number of items in 2nd 1D array of m2 i.e m2[1]= "+m2[1].length);
+        System.out.println("number of items in 3rd 1D array of m2 i.e m2[2]= "+m2[2].length);
+
+        // retrieve the data from m2 array
+        // first row data
+        System.out.print(m2[0][0] + " ");
+        System.out.print(m2[0][1] + " ");
+        System.out.print(m2[0][2] + "\n");
+        // second row data
+        System.out.print(m2[1][0] + " ");
+        System.out.print(m2[1][1] + " ");
+        System.out.print(m2[1][2] + "\n");
+        // third row data
+        System.out.print(m2[2][0] + " ");
+        System.out.print(m2[2][1] + " ");
+        System.out.print(m2[2][2] + "\n");
+
+        // 2D array with unequal of columns in rows
+        int[][] m3 = {{1,2}, {3,4,5,6}, {7,8,9}};
+
+        // number of items in a m2 array
+        System.out.println("number of items in m3 = "+m3.length);
+        System.out.println("number of items in 1st 1D array of m3 i.e m3[0]= "+m3[0].length);
+        System.out.println("number of items in 2nd 1D array of m3 i.e m3[1]= "+m3[1].length);
+        System.out.println("number of items in 3rd 1D array of m3 i.e m3[2]= "+m3[2].length);
+
+        // retrieve the data from m3 array
+        // first row data
+        System.out.print(m3[0][0] + " ");
+        System.out.print(m3[0][1] + "\n");
+        // second row data
+        System.out.print(m3[1][0] + " ");
+        System.out.print(m3[1][1] + " ");
+        System.out.print(m3[1][2] + " ");
+        System.out.print(m3[1][3] + "\n");
+        // third row data
+        System.out.print(m3[2][0] + " ");
+        System.out.print(m3[2][1] + " ");
+        System.out.print(m3[2][2] + "\n");
+
+
 
     }
 }

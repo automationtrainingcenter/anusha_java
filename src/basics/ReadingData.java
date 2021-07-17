@@ -66,6 +66,7 @@ public class ReadingData {
         System.out.println("enter a character");
         String str1 = sc.next();
         char ch = str1.charAt(0);
+//        char ch = sc.next().charAt(0); // object chaining
         System.out.println("character ch = "+ch);
     }
 
