@@ -56,12 +56,16 @@ public class ArraysDemo {
 
         // retrieve the data from array
         System.out.println("After declaration without assigning any values");
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
-        System.out.println(numbers[3]);
-        System.out.println(numbers[4]);
-        System.out.println(numbers[5]);
+//        System.out.println(numbers[0]);
+//        System.out.println(numbers[1]);
+//        System.out.println(numbers[2]);
+//        System.out.println(numbers[3]);
+//        System.out.println(numbers[4]);
+//        System.out.println(numbers[5]);
+        // retrieve data using normal for loop
+        for (int i = 0; i < numbers.length; i++){
+            System.out.println(numbers[i]);
+        }
 
         // store the values
         numbers[0] = 10;
@@ -72,21 +76,22 @@ public class ArraysDemo {
         numbers[5] = 60;
 
         System.out.println("After assigning values");
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
-        System.out.println(numbers[3]);
-        System.out.println(numbers[4]);
-        System.out.println(numbers[5]);
+        // retrieve the data using for each loop
+        for (int number : numbers) {
+            System.out.println(number);
+        }
 
         // 1D array initialization
         char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
-        System.out.println(vowels[0]);
-        System.out.println(vowels[1]);
-        System.out.println(vowels[2]);
-        System.out.println(vowels[3]);
-        System.out.println(vowels[4]);
+//        System.out.println(vowels[0]);
+//        System.out.println(vowels[1]);
+//        System.out.println(vowels[2]);
+//        System.out.println(vowels[3]);
+//        System.out.println(vowels[4]);
+        for (char vowel : vowels) {
+            System.out.println(vowel);
+        }
 
 
         // 2D array declaration
