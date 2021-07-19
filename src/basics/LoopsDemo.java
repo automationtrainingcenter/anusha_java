@@ -63,6 +63,9 @@ package basics;
  */
 
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class LoopsDemo {
 
     public static void main(String[] args) {
@@ -119,5 +122,122 @@ public class LoopsDemo {
             System.out.print(l + " ");
         }
         System.out.println("End of for loop with continue");
+
+        // prime number
+        num = 113;
+        boolean status = true;
+        for (int n = 2; n <= num/2; n++){
+            if (num % n == 0){
+                System.out.println(String.format("%d is not prime and it is divisible with %d times %d", num, n, num/n));
+                status = false;
+                break;
+            }
+        }
+        if (status) {
+            System.out.println(String.format("%d is prime", num));
+        }
+
+        //  reverse the given string or verify given string is palindrome or not
+        String str = "Madam";
+        String rstr = "";
+        for (int n = str.length()-1; n >=0 ; n--){
+            rstr += str.charAt(n);
+        }
+        System.out.println(rstr);
+        if(rstr.equalsIgnoreCase(str)){
+            System.out.println("Given string is palindrome");
+        } else {
+            System.out.println("Given string is not palindrome");
+        }
+
+        // given number is palindrome
+        int aNum = 12221;
+        int rNum = 0;
+        num = aNum;
+        while (num != 0){
+            int r = num % 10;
+            rNum = rNum * 10 + r;
+            num = num / 10;
+        }
+        if (aNum == rNum) {
+            System.out.println("Given number is palindrome");
+        } else {
+            System.out.println("Given number is not palindrome");
+        }
+
+        // remove duplicates from string
+        String s1 = "prakash";
+        String sNoDupes = "";
+        for (int n = 0; n < s1.length(); n++){
+            char ch = s1.charAt(n);
+            /*if (!sNoDupes.contains(Character.toString(ch))) {
+                sNoDupes += ch;
+            }*/
+            if (sNoDupes.indexOf(ch) < 0){
+                sNoDupes += ch;
+            }
+        }
+        System.out.println(sNoDupes);
+
+        // print prime number from 10 to 100
+        for (int r = 10; r < 20; r++){ // outer loop which will iterate over numbers 10 to 100
+            boolean flag = true;
+            for (int n = 2; n <= r/2; n++){ // inner loop which will iterate from 2 to half of the number from outer loop
+                if (r % n == 0){
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.print(String.format("%d ", r));
+            }
+        }
+
+        // read string from the console until you entered a string as exit
+        Scanner sc = new Scanner(System.in);
+        String s = "";
+        /*do {
+            System.out.println("enter some string");
+            s = sc.next();
+            if(!s.equalsIgnoreCase("exit")) {
+                System.out.println(String.format("String s is %s", s.toUpperCase()));
+            }
+        } while (!s.equalsIgnoreCase("exit"));*/
+        do {
+            System.out.println("enter some string");
+            s = sc.next();
+            if(s.equalsIgnoreCase("exit")){
+                break;
+            }
+            System.out.println(String.format("string s is %s", s.toUpperCase()));
+        } while (true);
+
+        // read the string until you entered a string as exit, swap the case of give string
+        // Anusha = aNUSHA
+        while (true) {
+            System.out.println("enter some string");
+            s = sc.next();
+            if (s.equalsIgnoreCase("exit")){
+                break;
+            }
+            String swapCase = "";
+            for (int n = 0; n < s.length(); n++) {
+                char ch = s.charAt(n);
+                char c;
+                if (Character.isUpperCase(ch)) {
+                   c = Character.toLowerCase(ch);
+                } else if (Character.isLowerCase(ch)) {
+                    c = Character.toUpperCase(ch);
+                } else {
+                    c = ch;
+                }
+                swapCase += c;
+            }
+            System.out.println("String after swapping the case is "+swapCase);
+        }
+
+
+
+
     }
 }

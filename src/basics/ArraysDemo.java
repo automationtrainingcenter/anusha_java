@@ -110,10 +110,19 @@ public class ArraysDemo {
 
 
         // retrieve the data from m1 array
-        System.out.print(m1[0][0]+ " "); // first row first column
-        System.out.println(m1[0][1]); // first row second column
-        System.out.print(m1[1][0] + " "); // second row first column
-        System.out.println(m1[1][1]); // second row second column
+//        System.out.print(m1[0][0]+ " "); // first row first column
+//        System.out.println(m1[0][1]); // first row second column
+//        System.out.print(m1[1][0] + " "); // second row first column
+//        System.out.println(m1[1][1]); // second row second column
+
+        // retrieve the data using normal for loop
+        for (int r = 0; r < m1.length; r++) {
+            for (int c = 0; c < m1[r].length; c++) {
+                System.out.print(m1[r][c] +" ");
+            }
+            System.out.println();
+//            System.out.println(String.format("m1[%d] = %d", r, m1[r].length));
+        }
 
 
         // 2D array initialization
@@ -121,47 +130,80 @@ public class ArraysDemo {
 
         // number of items in a m2 array
         System.out.println("number of items in m2 = "+m2.length);
-        System.out.println("number of items in 1st 1D array of m2 i.e m2[0]= "+m2[0].length);
-        System.out.println("number of items in 2nd 1D array of m2 i.e m2[1]= "+m2[1].length);
-        System.out.println("number of items in 3rd 1D array of m2 i.e m2[2]= "+m2[2].length);
+        for (int r = 0; r < m2.length; r++) {
+            System.out.println(String.format("number of items in 1st 1D array of m2 i.e m2[%d]= %d", r, m2[r].length));
+        }
+//        System.out.println("number of items in 1st 1D array of m2 i.e m2[0]= "+m2[0].length);
+//        System.out.println("number of items in 2nd 1D array of m2 i.e m2[1]= "+m2[1].length);
+//        System.out.println("number of items in 3rd 1D array of m2 i.e m2[2]= "+m2[2].length);
 
         // retrieve the data from m2 array
         // first row data
-        System.out.print(m2[0][0] + " ");
-        System.out.print(m2[0][1] + " ");
-        System.out.print(m2[0][2] + "\n");
-        // second row data
-        System.out.print(m2[1][0] + " ");
-        System.out.print(m2[1][1] + " ");
-        System.out.print(m2[1][2] + "\n");
-        // third row data
-        System.out.print(m2[2][0] + " ");
-        System.out.print(m2[2][1] + " ");
-        System.out.print(m2[2][2] + "\n");
+//        System.out.print(m2[0][0] + " ");
+//        System.out.print(m2[0][1] + " ");
+//        System.out.print(m2[0][2] + "\n");
+//        // second row data
+//        System.out.print(m2[1][0] + " ");
+//        System.out.print(m2[1][1] + " ");
+//        System.out.print(m2[1][2] + "\n");
+//        // third row data
+//        System.out.print(m2[2][0] + " ");
+//        System.out.print(m2[2][1] + " ");
+//        System.out.print(m2[2][2] + "\n");
+
+        for (int r = 0; r < m2.length; r++) {
+            for (int c = 0; c < m2[r].length; c++) {
+                System.out.print(m2[r][c] +" ");
+            }
+            System.out.println();
+//            System.out.println(String.format("m2[%d] = %d", r, m2[r].length));
+        }
+
+        // retrieve the data using for each loop
+        System.out.println("For Each Loop");
+        for (int[] oneDarr : m2) {
+            for (int item : oneDarr){
+                System.out.print(item +"\t");
+            }
+            System.out.println();
+        }
 
         // 2D array with unequal of columns in rows
         int[][] m3 = {{1,2}, {3,4,5,6}, {7,8,9}};
 
         // number of items in a m2 array
         System.out.println("number of items in m3 = "+m3.length);
-        System.out.println("number of items in 1st 1D array of m3 i.e m3[0]= "+m3[0].length);
-        System.out.println("number of items in 2nd 1D array of m3 i.e m3[1]= "+m3[1].length);
-        System.out.println("number of items in 3rd 1D array of m3 i.e m3[2]= "+m3[2].length);
+        for (int r = 0; r < m3.length; r++) {
+            System.out.println(String.format("number of items in 1st 1D array of m2 i.e m3[%d]= %d", r, m3[r].length));
+        }
 
         // retrieve the data from m3 array
         // first row data
-        System.out.print(m3[0][0] + " ");
-        System.out.print(m3[0][1] + "\n");
-        // second row data
-        System.out.print(m3[1][0] + " ");
-        System.out.print(m3[1][1] + " ");
-        System.out.print(m3[1][2] + " ");
-        System.out.print(m3[1][3] + "\n");
-        // third row data
-        System.out.print(m3[2][0] + " ");
-        System.out.print(m3[2][1] + " ");
-        System.out.print(m3[2][2] + "\n");
+//        System.out.print(m3[0][0] + " ");
+//        System.out.print(m3[0][1] + "\n");
+//        // second row data
+//        System.out.print(m3[1][0] + " ");
+//        System.out.print(m3[1][1] + " ");
+//        System.out.print(m3[1][2] + " ");
+//        System.out.print(m3[1][3] + "\n");
+//        // third row data
+//        System.out.print(m3[2][0] + " ");
+//        System.out.print(m3[2][1] + " ");
+//        System.out.print(m3[2][2] + "\n");
+        for (int r = 0; r < m3.length; r++) {
+            for (int c = 0; c < m3[r].length; c++) {
+                System.out.print(m3[r][c] +" ");
+            }
+            System.out.println();
+//            System.out.println(String.format("m2[%d] = %d", r, m2[r].length));
+        }
 
+        for (int[] oneDarr : m3) {
+            for (int item : oneDarr){
+                System.out.print(item +"\t");
+            }
+            System.out.println();
+        }
 
 
     }
