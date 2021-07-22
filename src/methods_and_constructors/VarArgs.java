@@ -9,6 +9,8 @@ package methods_and_constructors;
  * the above method accepts either 0 or more number of parameters
  */
 
+import java.util.Arrays;
+
 public class VarArgs {
 
     public static void methodOne(int... numbers){
@@ -35,9 +37,16 @@ public class VarArgs {
         }
     }
 
+    /* Varargs always follows the mandatory arguments */
+    public void methodThree(int i, int j, String... names){
+        System.out.printf("i = %d and j = %d\n", i, j);
+        System.out.println(Arrays.asList(names));
+    }
+
     public static void main(String[] args) {
         methodOne(1, 2, 3);
         VarArgs obj = new VarArgs();
         obj.methodTwo("c", "cpp", "JAVA", "PYThon", "selenium webdriver");
+        obj.methodThree(10, 20, "anusha", "teja", "John", "jefry", "dan");
     }
 }
