@@ -9,6 +9,7 @@ public class ConstructorDemoTwo {
     double fee;
     String email;
     int pincode;
+    ConstructorDemoTwo obj2;
 
 
     // default constructor
@@ -27,6 +28,7 @@ public class ConstructorDemoTwo {
 
     public ConstructorDemoTwo(int id, String name, String course, long phNum, double fee, int pincode) {
         this(id, name, course, phNum, fee, "", pincode);
+
     }
 
     public ConstructorDemoTwo(int id, String name, String course, long phNum, double fee, String email, int pincode) {
