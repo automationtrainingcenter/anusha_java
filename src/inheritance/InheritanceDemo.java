@@ -127,30 +127,41 @@ public class InheritanceDemo {
 
     public static void main(String[] args) {
        // creating object of Parent class
-//        Parent p = new Parent();
-//        p.methodOne();
-//
-//        // Creating object of Child class object
-//        Child c = new Child();
-//        c.methodTwo(); // Child class
-//        c.methodOne(); // Parent class
-//
-//        // create an object of SubChild Class
-//        SubChild sc = new SubChild();
-//        sc.methodThree(); // SubChild
-//        sc.methodTwo(); // Child
-//        sc.methodOne(); // Parent
-//
-//        // create an object of ChildOne class
-//        // ChildOne -> Parent as well as Child -> Parent
-//        ChildOne co = new ChildOne();
-//        co.methodFour(); // ChildOne
-//        co.methodOne(); // Parent
+        Parent p = new Parent();
+        p.methodOne();
+
+        // Creating object of Child class object
+        Child c = new Child();
+        c.methodTwo(); // Child class
+        c.methodOne(); // Parent class
+
+        // create an object of SubChild Class
+        SubChild sc = new SubChild();
+        sc.methodThree(); // SubChild
+        sc.methodTwo(); // Child
+        sc.methodOne(); // Parent
+
+        // create an object of ChildOne class
+        // ChildOne -> Parent as well as Child -> Parent
+        ChildOne co = new ChildOne();
+        co.methodFour(); // ChildOne
+        co.methodOne(); // Parent
 //        co.methodTwo(); // Child --- is not possible
         // Parent class with properties and parameterized constructor
         ChildProperties cp = new ChildProperties(101, "Anusha", "London", "gfhv1123f");
         cp.print();
 
+        /*
+        Whenever we create an object of child class using Child class constructor it will create
+        an object for both Child and Parent classes.
+
+        we can create an object reference to the parent class and object creation to any of the child classes
+         */
+
+        Parent pc = new Child();
+        pc.methodOne();
+        Child cObj = (Child) pc;
+        cObj.methodTwo();
 
     }
 
