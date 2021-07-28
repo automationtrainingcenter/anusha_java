@@ -6,14 +6,14 @@ public class Account {
 
     // properties of account
     // to place the cursor in multiple lines alt + shift + click
-    private int id;
-    private String name;
+    private final int id;
+    private final String name;
     private String address;
     private String phoneNum;
-    private double balance;
-    private int pin;
-    private String panNum;
-    private long aadharNum;
+    protected double balance;
+    protected int pin;
+    private final String panNum;
+    private final long aadharNum;
     private Scanner sc = new Scanner(System.in);
 
 
