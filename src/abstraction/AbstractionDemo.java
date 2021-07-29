@@ -1,4 +1,7 @@
 package abstraction;
+
+import java.util.Scanner;
+
 /*
  * Abstraction means a plan or template to create a class
  * Abstraction means hiding the implementation details of methods
@@ -96,11 +99,66 @@ public class AbstractionDemo {
         pObj.methodOne();
         pObj.methodTwo();
 
-        // create an object reference to the interface and object creation to the implmentation class
+        // create an object reference to the interface and object creation to the implementation class
         InterfaceDemo iObj = new InterfaceImpl();
         iObj.methodOne();
         iObj.methodTwo();
 
+        // Java 8 interface
+        Java8InterfaceDemo j8Obj = new Java8InterfaceImpl();
+        j8Obj.methodOne();
+        j8Obj.methodThree(); // default method
+        Java8InterfaceDemo.methodTwo(); // static method
+
+
+        // Multiple interfaces can be implemented by single class
+        MultiInterfaceImpl mobj = new MultiInterfaceImpl();
+        mobj.methodOne();
+        mobj.methodTwo();
+
+        InterfaceOne i1 = new MultiInterfaceImpl();
+        i1.methodOne();
+//        MultiInterfaceImpl mi = (MultiInterfaceImpl) i1;
+//        mi.methodTwo();
+//        ((MultiInterfaceImpl) i1).methodTwo();
+        InterfaceTwo i2 = (InterfaceTwo) i1;
+        i2.methodTwo();
+//        ((InterfaceTwo) i1).methodTwo();
+
+        // inner interfaces
+        Outer oObj = new OuterInnerImpl();
+        oObj.omethod(); // Outer interface method
+
+        Outer.Inner inObj = (Outer.Inner) oObj;
+        inObj.imethod();
+        ((Outer.Inner) oObj).imethod();
+
+//        Outer.Inner innObj = oObj.method();
+//        innObj.imethod();
+          oObj.method().imethod(); // object chaining
+
+
+        // Functional interface implemented by normal java class
+        FunctionalInterfaceDemo fnor = new FuncInterfaceImpl();
+        fnor.methodOne();
+
+        // Functional interface implemented by anonymous class
+        FunctionalInterfaceDemo fanon = new FunctionalInterfaceDemo(){
+            @Override
+            public void methodOne() {
+                System.out.println("method one definition using anonymous class");
+            }
+        };
+
+
+        fanon.methodOne();
+
+        // Functional interface implementation using lambda expression
+        FunctionalInterfaceDemo flam = () -> System.out.println("method one definition using lambda expression");
+        flam.methodOne();
+
+        flam = () -> System.out.println("20");
+        flam.methodOne();
     }
 
 }
